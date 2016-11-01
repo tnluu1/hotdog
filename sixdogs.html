@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html ng-app="drag-and-drop">
+  <head lang="en">
+    <meta charset="utf-8">
+    <title>Drag & Drop: Multiple listsr</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="angular-dragdrop.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.js"></script>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+
+    <style type="text/css">
+        html, body {
+            margin: 10;
+            border: 100;
+            width: 100%;
+        }
+
+        body {
+            padding: 0 20px;
+        }
+
+        #main {
+            margin: 0 auto; /* in case you want to set a fixed width on this as well */
+        }
+    </style>
+
+    <body>
+        <div id="main"></div>
+    </body>
+
+
+
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand"> <img src="http://www.pawsforpeople.org/wp-content/uploads/2011/07/paw-276x300.png" style="width:34px;height:30px;"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+  </nav>
+
+<body>
+
+<br>
+<br>
+
+<div class="row">
+  <div ng-controller="twoCtrl">
+  <div class="col-sm-8 col-sm-4">
+    <div class="thumbnail">
+      <img src="http://cdn.akc.org/akcdoglovers/GreatPyrenees_hero.jpg" style="width:304px;height:228px;" alt="...">
+      <div class="caption"   ng-model="list1" ng-hide="!list1.title">
+        <h3>{{list1.dog_name}}<br> {{list1.dog_gender}}</h3>
+        <p></p>
+        <p>
+
+       </p>
+     </div>
+      </div>
+
+    </div>
+
+    <div class="col-sm-8 col-sm-4">
+      <div class="thumbnail">
+        <img src="http://cdn.akc.org/akcdoglovers/GreatPyrenees_hero.jpg" style="width:304px;height:228px;" alt="...">
+        <div class="caption"   ng-model="list1" ng-hide="!list1.title">
+          <h3>{{list1.dog_name}}<br> {{list1.dog_gender}}</h3>
+          <p></p>
+          <p>
+
+         </p>
+       </div>
+        </div>
+
+      </div>  <div class="col-sm-8 col-sm-4">
+          <div class="thumbnail">
+            <img src="http://cdn.akc.org/akcdoglovers/GreatPyrenees_hero.jpg" style="width:304px;height:228px;" alt="...">
+            <div class="caption"   ng-model="list1" ng-hide="!list1.title">
+              <h3>{{list1.dog_name}}<br> {{list1.dog_gender}}</h3>
+              <p></p>
+              <p>
+
+             </p>
+           </div>
+            </div>
+
+          </div>  <div class="col-xs-8 col-lg-4">
+              <div class="thumbnail">
+                <img src="http://cdn.akc.org/akcdoglovers/GreatPyrenees_hero.jpg" style="width:304px;height:228px;" alt="...">
+                <div class="caption"   ng-model="list1" ng-hide="!list1.title">
+                  <h3>{{list1.dog_name}}<br> {{list1.dog_gender}}</h3>
+                  <p></p>
+                  <p>
+
+                 </p>
+               </div>
+                </div>
+
+              </div>  <div class="col-xs-8 col-lg-4">
+                  <div class="thumbnail">
+                    <img src="http://cdn.akc.org/akcdoglovers/GreatPyrenees_hero.jpg" style="width:304px;height:228px;" alt="...">
+                    <div class="caption"   ng-model="list1" ng-hide="!list1.title">
+                      <h3>{{list1.dog_name}}<br> {{list1.dog_gender}}</h3>
+                      <p></p>
+                      <p>
+
+                     </p>
+                   </div>
+                    </div>
+
+                  </div>  <div class="col-xs-8 col-lg-4">
+                      <div class="thumbnail">
+                        <img src="http://cdn.akc.org/akcdoglovers/GreatPyrenees_hero.jpg" style="width:304px;height:228px;" alt="...">
+                        <div class="caption"   ng-model="list1" ng-hide="!list1.title">
+                          <h3>{{list1.dog_name}}<br> {{list1.dog_gender}}</h3>
+                          <p></p>
+                          <p>
+
+                         </p>
+                       </div>
+                        </div>
+
+                      </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
